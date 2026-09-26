@@ -43,26 +43,24 @@ frontmatter fields (`name`, `description`), no tool-specific scripts.
 
 Uses the open [`skills` CLI](https://github.com/vercel-labs/skills) (needs Node.js 18+). It works
 with Claude Code, Codex, Cursor, GitHub Copilot, Cline, OpenCode, and 70+ other agents.
-Replace `<github-user>` with the GitHub account that hosts this repo.
-
 ```bash
 # Interactive: pick skills and agents from a menu
-npx skills add <github-user>/mobile-design-skills
+npx skills add dodoxtech/mobile-design-skills
 
 # All 8 skills → Claude Code, for every project (~/.claude/skills/)
-npx skills add <github-user>/mobile-design-skills --skill '*' -a claude-code -g -y
+npx skills add dodoxtech/mobile-design-skills --skill '*' -a claude-code -g -y
 
 # All 8 skills → current project only (./.claude/skills/, commit it to share with your team)
-npx skills add <github-user>/mobile-design-skills --skill '*' -a claude-code -y
+npx skills add dodoxtech/mobile-design-skills --skill '*' -a claude-code -y
 
 # Only some skills
-npx skills add <github-user>/mobile-design-skills --skill apple-creative-direction --skill apple-motion-and-delight -a claude-code -g -y
+npx skills add dodoxtech/mobile-design-skills --skill apple-creative-direction --skill apple-motion-and-delight -a claude-code -g -y
 
 # Other agents (several -a flags allowed)
-npx skills add <github-user>/mobile-design-skills --skill '*' -a codex -a cursor -g -y
+npx skills add dodoxtech/mobile-design-skills --skill '*' -a codex -a cursor -g -y
 
 # See what the repo contains without installing
-npx skills add <github-user>/mobile-design-skills --list
+npx skills add dodoxtech/mobile-design-skills --list
 
 # From a local copy (before publishing, or for testing edits)
 npx skills add ./mobile-design-skills --skill '*' -a claude-code -g -y
@@ -90,7 +88,7 @@ sections below.
 ### 0. Get the files and build the packages
 
 ```bash
-git clone <this-repo-url> mobile-design-skills   # or download and unzip the folder
+git clone https://github.com/dodoxtech/ios-app-design-skills mobile-design-skills   # or download and unzip the folder
 cd mobile-design-skills
 ./scripts/build.sh                               # creates dist/ (zips for claude.ai, files for ChatGPT)
 ```
@@ -206,7 +204,7 @@ On claude.ai, delete the old skill and upload the new zip. In ChatGPT, replace t
 ### Cài đặt nhanh (Tiếng Việt)
 
 0. **Nhanh nhất (Claude Code, Codex, Cursor…):**
-   `npx skills add <github-user>/mobile-design-skills --skill '*' -a claude-code -g -y`
+   `npx skills add dodoxtech/mobile-design-skills --skill '*' -a claude-code -g -y`
    (cần Node.js 18+; đổi `-a claude-code` thành `-a codex`, `-a cursor`… cho agent khác).
 1. Tải repo về, mở Terminal trong thư mục, chạy `./scripts/build.sh`.
 2. **Claude Code:** chạy `./scripts/install.sh`, rồi mở phiên mới. Hỏi *"What skills do you have?"* để kiểm tra.
