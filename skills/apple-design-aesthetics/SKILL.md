@@ -120,5 +120,6 @@ Next: what to mock up first
 - `apple-creative-direction`: concept and metaphor first. An aesthetic can serve as the "visual identity" for
   one of its directions.
 - `apple-motion-and-delight`: turn the motion row of the aesthetic into springs and haptics.
+- `apple-hig-color`: balance the aesthetic's palette (60-30-10, harmony) and build light/dark/increased-contrast tokens.
 - `apple-hig-foundations`: color, typography, materials, and accessibility rules.
 - `apple-hig-design-review`: audit the result.

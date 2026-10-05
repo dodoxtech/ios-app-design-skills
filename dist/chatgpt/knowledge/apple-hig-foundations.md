@@ -102,6 +102,7 @@ screen are easiest to reach, so put frequent actions there and support swipe-to-
 - Use P3 wide color for rich media where it helps; ship sRGB-safe fallbacks for near-identical P3 colors.
 
 → Semantic color roles, materials, Liquid Glass variants: `references/color-and-materials.md`
+→ Choosing a palette by emotion, harmony, and 60-30-10 proportions: skill `apple-hig-color`
 
 ## Materials & Liquid Glass
 
@@ -169,6 +170,7 @@ Every foundation decision must pass these:
 - `apple-hig-patterns` — onboarding, permissions, loading/empty/error states, settings, writing.
 - `apple-hig-design-review` — structured audit of an existing design.
 - `apple-hig-screen-design` — produce a new screen/flow spec.
+- `apple-hig-color` — build a brand palette: emotion, harmony, proportions, adaptive tokens.
 
 
 ---

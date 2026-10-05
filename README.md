@@ -1,6 +1,6 @@
 # Apple HIG Mobile Design Skills
 
-Eight agent skills that make Claude or ChatGPT act as a senior iOS/iPadOS product designer and creative director who follows
+Nine agent skills that make Claude or ChatGPT act as a senior iOS/iPadOS product designer and creative director who follows
 Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines)
 (iOS 26 / Liquid Glass era).
 
@@ -14,10 +14,11 @@ Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-in
 | [`apple-creative-direction`](skills/apple-creative-direction/SKILL.md) | Creative | Concept & metaphor, 3 directions (refined → expressive → wild), visual identity, signature moments, HIG guardrails, anti-clichés |
 | [`apple-motion-and-delight`](skills/apple-motion-and-delight/SKILL.md) | Creative | Motion language (springs, choreography), signature interactions, delight catalog, haptics, SwiftUI motion recipes |
 | [`apple-design-aesthetics`](skills/apple-design-aesthetics/SKILL.md) | Creative | Choose a named aesthetic (Bauhaus, Swiss, Art Deco, Memphis, Japandi, Frutiger Aero, Y2K, Neubrutalism… 40 styles) → shortlist, blend, iOS tokens, HIG guardrails |
+| [`apple-hig-color`](skills/apple-hig-color/SKILL.md) | Creative + Knowledge | Emotion → palette, color harmony (analogous, complementary, triadic…), 60-30-10 proportions, light/dark/increased-contrast tokens checked against HIG › Color |
 
 **Two layers:** the creative skills push for a distinctive concept ("be conventional where people act,
 unforgettable where people feel"); the HIG skills act as guardrails. A typical flow is
-`apple-creative-direction` → `apple-design-aesthetics` → `apple-motion-and-delight` → `apple-hig-screen-design` → `apple-hig-design-review`.
+`apple-creative-direction` → `apple-design-aesthetics` → `apple-hig-color` → `apple-motion-and-delight` → `apple-hig-screen-design` → `apple-hig-design-review`.
 
 Every skill labels advice as **`HIG › <page>`** (stated by Apple) or **`Convention`** (common practice),
 so designers and engineers can tell a rule from a preference.
@@ -47,10 +48,10 @@ with Claude Code, Codex, Cursor, GitHub Copilot, Cline, OpenCode, and 70+ other 
 # Interactive: pick skills and agents from a menu
 npx skills add dodoxtech/mobile-design-skills
 
-# All 8 skills → Claude Code, for every project (~/.claude/skills/)
+# All 9 skills → Claude Code, for every project (~/.claude/skills/)
 npx skills add dodoxtech/mobile-design-skills --skill '*' -a claude-code -g -y
 
-# All 8 skills → current project only (./.claude/skills/, commit it to share with your team)
+# All 9 skills → current project only (./.claude/skills/, commit it to share with your team)
 npx skills add dodoxtech/mobile-design-skills --skill '*' -a claude-code -y
 
 # Only some skills
@@ -120,7 +121,7 @@ Manual alternative: `cp -R skills/* ~/.claude/skills/`
 
 Then:
 1. Start a **new** Claude Code session. Skills are loaded at session start.
-2. Check: ask *"What skills do you have available?"*. The eight `apple-*` skills should be listed.
+2. Check: ask *"What skills do you have available?"*. The nine `apple-*` skills should be listed.
 3. Use it: Claude picks a skill automatically when your request matches its description, or you can
    name one: *"Use apple-creative-direction to give me 3 directions for a sleep app."*
 
@@ -132,7 +133,7 @@ enable Skills for the organization first.
 1. Run `./scripts/build.sh`. You get one zip per skill in `dist/claude/`.
 2. Open **Settings › Capabilities**. Turn on **Code execution and file creation** (Skills need it).
 3. In the **Skills** section, click **Upload skill** and choose a zip from `dist/claude/`.
-4. Repeat for all 8 zips, then make sure each skill is toggled **on**.
+4. Repeat for all 9 zips, then make sure each skill is toggled **on**.
 5. Start a new chat and ask for something the skill covers, e.g. *"Review this screen against the HIG"*
    with a screenshot attached.
 
@@ -151,8 +152,8 @@ Messages requests (the code execution tool must be enabled). Endpoints, beta hea
 Custom GPT (needs a paid ChatGPT plan to create one):
 1. ChatGPT › **GPTs › Create › Configure**.
 2. **Name:** e.g. *HIG Design Partner*. **Description:** *Senior iOS designer and creative director following Apple's HIG.*
-3. **Instructions:** paste the full contents of `dist/chatgpt/instructions.md` (about 4,500 characters; the limit is 8,000).
-4. **Knowledge:** upload the 8 files from `dist/chatgpt/knowledge/`.
+3. **Instructions:** paste the full contents of `dist/chatgpt/instructions.md` (about 6,000 characters; the limit is 8,000).
+4. **Knowledge:** upload the 9 files from `dist/chatgpt/knowledge/`.
 5. **Capabilities:** turn on image generation (for mood/visual exploration) and Code Interpreter
    (optional). Web search is optional; turn it on if you want it to check the latest HIG.
 6. **Conversation starters** (optional): copy a few from [Example prompts](#example-prompts).
@@ -160,7 +161,7 @@ Custom GPT (needs a paid ChatGPT plan to create one):
 
 ChatGPT Project (no GPT builder needed):
 1. Create a **Project**. Open **Project settings › Instructions** and paste `dist/chatgpt/instructions.md`.
-2. Add the 8 files from `dist/chatgpt/knowledge/` as **Project files**.
+2. Add the 9 files from `dist/chatgpt/knowledge/` as **Project files**.
 3. Chat inside that project.
 
 If your ChatGPT workspace supports `SKILL.md` skills directly, upload the zips from `dist/claude/`
@@ -178,7 +179,7 @@ The skills folder location differs between Codex versions. Check your version's 
 
 ### F. Any other AI tool
 
-Paste or attach `dist/single-file/apple-hig-skills.md` (all 8 skills in one file) as the system prompt,
+Paste or attach `dist/single-file/apple-hig-skills.md` (all 9 skills in one file) as the system prompt,
 custom instructions, project knowledge, or a rules file (e.g. Cursor `.cursor/rules/`, Gemini Gems).
 If the tool limits prompt length, attach it as a file and use `chatgpt/instructions.md` as the prompt.
 
@@ -209,9 +210,9 @@ On claude.ai, delete the old skill and upload the new zip. In ChatGPT, replace t
 1. Tải repo về, mở Terminal trong thư mục, chạy `./scripts/build.sh`.
 2. **Claude Code:** chạy `./scripts/install.sh`, rồi mở phiên mới. Hỏi *"What skills do you have?"* để kiểm tra.
 3. **claude.ai:** Settings › Capabilities › bật *Code execution*, rồi ở mục Skills bấm *Upload skill* và
-   tải lần lượt 8 file zip trong `dist/claude/`.
+   tải lần lượt 9 file zip trong `dist/claude/`.
 4. **ChatGPT:** tạo Custom GPT hoặc Project. Dán nội dung `dist/chatgpt/instructions.md` vào ô
-   Instructions và tải 8 file trong `dist/chatgpt/knowledge/` lên phần Knowledge.
+   Instructions và tải 9 file trong `dist/chatgpt/knowledge/` lên phần Knowledge.
 5. **Công cụ khác:** dùng file `dist/single-file/apple-hig-skills.md`.
 
 Skill viết bằng tiếng Anh nhưng AI sẽ trả lời bằng ngôn ngữ bạn hỏi.
@@ -223,6 +224,8 @@ Skill viết bằng tiếng Anh nhưng AI sẽ trả lời bằng ngôn ngữ b�
 - "Should editing a profile be a push or a sheet? We have unsaved-changes risk."
 - "Audit this SwiftUI view for HIG and accessibility problems." *(paste code)*
 - "Give me a Dark Mode-safe color system for a brand with accent #FF5A1F."
+- "Pick a palette for a baby sleep tracker that feels calm, safe, and tender, with 60-30-10 proportions."
+- "Our fitness app colors feel muddy. Suggest a harmony scheme and fix the proportions."
 - "Write the empty, error, and offline states for our Library tab."
 - "Give me 3 creative directions for a sleep-tracking app — one of them should be wild."
 - "Design a signature interaction and a motion language for our habit app. It feels too generic."
@@ -242,5 +245,7 @@ Skill viết bằng tiếng Anh nhưng AI sẽ trả lời bằng ngôn ngữ b�
 - WWDC26 refined Liquid Glass rendering; review the Liquid Glass sections against the latest HIG.
 - When Apple updates the HIG (usually at WWDC in June and at iPhone launches in September), recheck
   `references/layout-and-devices.md` (device sizes), the Liquid Glass sections, and `swiftui-mapping.md`.
+- The color skill draws on Itten (*The Art of Color*), Albers (*Interaction of Color*), Goethe's light values,
+  OKLCH, and HIG › Color as updated December 2025 for Liquid Glass.
 - These skills summarize and point to Apple's guidance; they aren't affiliated with Apple.
   The Human Interface Guidelines belong to Apple Inc.
