@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ios-app-design-skills",
+  "description": "Apple HIG design skills for iOS/iPadOS: foundations, components, patterns, design review, screen design, creative direction, motion, aesthetics and color.",
+  "owner": {
+    "name": "dodoxtech"
+  },
+  "plugins": [
+    {
+      "name": "ios-app-design-skills",
+      "description": "Nine skills that make Claude act as a senior iOS product designer following Apple's Human Interface Guidelines (iOS 26 / Liquid Glass era).",
+      "source": "./",
+      "category": "design"
+    }
+  ]
+}

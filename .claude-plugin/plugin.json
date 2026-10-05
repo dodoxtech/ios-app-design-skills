@@ -1,0 +1,10 @@
+{
+  "name": "ios-app-design-skills",
+  "description": "Nine skills that make Claude act as a senior iOS product designer following Apple's Human Interface Guidelines (iOS 26 / Liquid Glass era).",
+  "author": {
+    "name": "dodoxtech"
+  },
+  "repository": "https://github.com/dodoxtech/ios-app-design-skills",
+  "keywords": ["ios", "ipados", "hig", "design", "swiftui", "liquid-glass"],
+  "skills": "./skills"
+}

@@ -110,6 +110,30 @@ Which option should I use?
 
 ### A. Claude Code
 
+As a plugin (updates come with the plugin, skills are namespaced `ios-app-design-skills:<skill>`):
+
+```
+/plugin marketplace add dodoxtech/ios-app-design-skills
+/plugin install ios-app-design-skills@ios-app-design-skills
+```
+
+To enable it for everyone working on a project, commit this to the project's `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "ios-app-design-skills": {
+      "source": { "source": "github", "repo": "dodoxtech/ios-app-design-skills" }
+    }
+  },
+  "enabledPlugins": {
+    "ios-app-design-skills@ios-app-design-skills": true
+  }
+}
+```
+
+Or copy the skills directly:
+
 ```bash
 ./scripts/install.sh                       # all projects → ~/.claude/skills/
 ./scripts/install.sh --project ~/my-app    # one project  → ~/my-app/.claude/skills/ (commit it to share with your team)
